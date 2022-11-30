@@ -15,10 +15,18 @@
  
  */
 // Creating arrays
-
+var levels: [String] = ["Easy", "Moderate", "Veteran"]
+var extraSyntax1 : Array<String> = Array<String>()
 
 // Count and isEmpty
+levels.count
+levels.isEmpty
 
 
 // Accessing array values
+var diff = levels[2]
+print(diff)
+levels[2] = "Expert"
+levels
+
 
