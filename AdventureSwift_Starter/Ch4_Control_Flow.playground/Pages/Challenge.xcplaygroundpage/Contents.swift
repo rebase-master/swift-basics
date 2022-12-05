@@ -16,12 +16,37 @@
  
  */
 // 1
-
+var lefthandWeapon: String? = "Left Hand Weapon"
+var righthandWeapon: String?
 // 2
-
+if let leftW = lefthandWeapon, let rightW = righthandWeapon {
+    print(leftW, rightW)
+}
 // 3
-
+var playerExp = [
+"player1": 549,
+"player2": 0,
+"player3": 300
+]
 // 4
+for (_, exp) in playerExp {
+    guard exp >= 1 else {
+        print("You need to be at least level 1 to proceed")
+        continue
+    }
+    print("Go ahead! You're on level: \(exp)")
+    
+    switch (exp){
+    case 32:
+        print("Exp is 32")
+    case 201...500:
+        print("Between 200 and 500")
+    case (let localExp) where localExp > 500:
+        print("Exp is greater than 500")
+    default:
+        print("Invalid data!")
+    }
+}
 
 // 5
 

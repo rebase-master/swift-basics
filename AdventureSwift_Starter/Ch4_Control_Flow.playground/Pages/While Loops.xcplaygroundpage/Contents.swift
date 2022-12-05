@@ -14,6 +14,17 @@
 
  */
 // While loop
-
+var p = 10
+    
+while p > 0 {
+    print(p)
+    p -= 1
+}
 // Repeat-while loop
 
+var n = 1
+
+repeat {
+    print(n)
+    n += 1
+} while n < 10

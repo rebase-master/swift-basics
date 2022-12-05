@@ -32,3 +32,7 @@ var questDirectory = [
 
 // Optional binding
 
+if let fetchGems = questDirectory["Fetch Gemstones"]?["Objective"] {
+    print("Active quest object: \(fetchGems)")
+}
+
