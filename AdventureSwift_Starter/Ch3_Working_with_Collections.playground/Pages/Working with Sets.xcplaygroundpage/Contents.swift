@@ -14,10 +14,17 @@
 
  */
 // Creating sets
-
-
+var fruits: Set<String> = ["Apple", "Orange", "Banana", "Mango"]
+var seasonalFruits: Set<String> = ["Apple", "Banana", "Guava"]
 // Inserting and removing elements
+fruits.insert("Papaya")
+fruits.insert("Grapes")
 
-
+print(fruits)
+fruits.remove("Orange")
+print(fruits)
 // More common methods
+fruits.contains("Apple")
 
+let sortedFruits = fruits.sorted()
+print(sortedFruits)

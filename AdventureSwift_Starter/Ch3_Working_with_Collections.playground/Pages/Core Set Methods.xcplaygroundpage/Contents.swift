@@ -13,8 +13,20 @@
  [Previous Topic](@previous)                                                 [Next Topic](@next)
 
  */
-// Test variables
-
+// variables
+var fruits: Set<String> = ["Apple", "Orange", "Banana", "Mango"]
+var seasonalFruits: Set<String> = ["Apple", "Banana", "Guava"]
 
 // Set operations
+var commonFruits = fruits.intersection(seasonalFruits)
+print(commonFruits)
+
+var nonSeasonalFruits = fruits.symmetricDifference(seasonalFruits)
+print(nonSeasonalFruits)
+
+var allFruits = fruits.union(seasonalFruits)
+print(allFruits)
+
+var otherFruits = fruits.subtracting(seasonalFruits)
+print(otherFruits)
 
