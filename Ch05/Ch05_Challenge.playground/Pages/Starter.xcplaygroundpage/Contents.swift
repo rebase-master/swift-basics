@@ -15,16 +15,36 @@
  
  */
 // 1
-
+typealias Attack = (name: String, damage: Int)
 // 2
 
+func attackEnemy(damage: Int) {
+    print("\(damage) percent done!")
+}
+
 // 3
-
+func attackEnemy(attack: Attack) -> String {
+    return attack.name
+}
 // 4
-
+let attackLevel = (name: "Sun Strike", damage: 45)
+attackEnemy(damage: attackLevel.damage)
+attackEnemy(attack: attackLevel)
+let attackValues = [
+    (name: "Sun Strike", damage: 45),
+    (name: "Blister Attack", damage: 30)
+]
 // 5
-
+typealias AttackClosure = ([Attack]) -> Void
 // 6
+func fetchPlayerAttacks(attack: AttackClosure) -> Void {
+    attack(attackValues)
+}
 
 // 7
 
+fetchPlayerAttacks { (attacks) in
+    for (name, damage) in attacks {
+        print("\(name) did \(damage) percent damage")
+    }
+}
