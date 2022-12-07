@@ -15,11 +15,13 @@
  */
 //Parent class
 class Adventurer {
+    
     var name: String
     var specialMove: String?
     let maxHealth: Int
     
     fileprivate var health: Int
+    
     var Health: Int {
         get { return health }
         set {
@@ -33,7 +35,7 @@ class Adventurer {
         return 10
     }
     
-    class var credo: String {
+    class var credo: String { // class variable must be computed properties
         return "Defend the helpless!"
     }
     
@@ -53,8 +55,28 @@ class Adventurer {
 }
 
 // Subclass
-
+class Ranger: Adventurer {
+    var classAdvantage: String
+    
+    override class var credo: String {
+        return "to the king"
+    }
+    
+    init(name: String, advantage: String){
+        self.classAdvantage = advantage
+        super.init(name: name, maxHP: 150) // Needs to be done after self
+    }
+    
+    override func printStats() {
+        print("\(self.name): Ranger, Advantage: \(self.classAdvantage)")
+    }
+}
 
 var player1 = Adventurer(name: "Harrison", maxHP: 99)
 player1.printStats()
 Adventurer.credo
+Ranger.credo
+
+var aragon = Ranger(name: "Aragon", advantage: "Sword Master")
+aragon.printStats()
+

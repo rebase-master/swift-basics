@@ -18,13 +18,34 @@
  */
 // Test class
 class Adventurer {
-    var name: String
+    private var name: String // TODO: Read about access modifiers: private, public, internal, fileinternal
     var specialMove: String?
     let maxHealth: Int
+    
+    var healthLost: Int {
+        return maxHealth - 50
+    }
+    
+    static var maxActivePlayers = 10
+    
+    class var credo: String { // class variables can be overridden and can only be computed properties
+        return"Defend the helpless"
+    }
+    fileprivate var health: Int
+    
+    var Health: Int {
+        get { return health}
+        set {
+            if (newValue <= 100) { //local var used by Swift to store incoming value
+                health = newValue
+            }
+        }
+    }
     
     init(name: String, maxHP: Int) {
         self.name = name
         self.maxHealth = maxHP
+        self.health = maxHP
     }
     
     convenience init(name: String) {
@@ -39,5 +60,10 @@ class Adventurer {
 var player1 = Adventurer(name: "Harrison", maxHP: 99)
 var player2 = Adventurer(name: "Steven")
 
+//player1.name = "Harry" Not accessible here if property name is set to private
+
 player1.printStats()
 player2.printStats()
+Adventurer.credo
+Adventurer.maxActivePlayers
+
